@@ -1,0 +1,21 @@
+{
+  "id": "431e8c4b6db",
+  "systemTable": "AdminUser",
+  "name": "Пользователи системы",
+  "columns": [
+    {
+      "fieldId": "id",
+      "name": "id"
+    },
+    {
+      "fieldId": "createdAt",
+      "name": "createdAt"
+    },
+    {
+      "fieldId": "login",
+      "name": "login"
+    }
+  ],
+  "showInAdmin": "showEditDelete",
+  "showInAdminForm": "363d1829af9"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "363d1829af9",
+  "systemTable": "AdminUser",
+  "name": "Пользователи системы",
+  "fields": [
+    {
+      "children": [
+        {
+          "fieldId": "login",
+          "name": "Логин",
+          "format": "input",
+          "placeholder": "Введите логин"
+        },
+        {
+          "fieldId": "password",
+          "name": "Пароль",
+          "format": "password",
+          "placeholder": "Введите пароль"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/admin/users",
+  "endpointType": "createEditDelete",
+  "modifiers": [
+    "hashAdminPassword"
+  ],
+  "hooks": [
+    "useAdminAuth"
+  ],
+  "effects": [],
+  "idField": "id"
+}

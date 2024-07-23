@@ -1,0 +1,49 @@
+{
+  "name": "nebula-stack",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/run.js",
+    "build:frontend": "vite build -c vite.cms.config.ts",
+    "build:backend": "vite build -c vite.backend.config.ts",
+    "build:client": "vite build -c vite.client.config.ts",
+    "start": "node --enable-source-maps dist/backend/app.js",
+    "migrate": "vite-node scripts/migrations/run-migration.ts",
+    "collect": "node scripts/registerComponents.js src/cms && node scripts/registerComponents.js src/client"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vueuse/core": "^10.9.0",
+    "builtin-modules": "^4.0.0",
+    "color2k": "^2.0.3",
+    "pinia": "^2.1.7",
+    "prisma": "^5.17.0",
+    "sass": "^1.77.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-node": "^1.6.0",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "vue-tsc": "^2.0.19"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^8.2.0",
+    "@fastify/static": "^7.0.4",
+    "@prisma/client": "^5.17.0",
+    "compact-json-schema": "^0.0.6",
+    "cyrillic-to-translit-js": "^3.2.1",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
+    "emailjs": "^4.0.3",
+    "fastify": "^4.27.0",
+    "fastify-plugin": "^4.5.1",
+    "linkmeup": "^1.1.4",
+    "meilisearch": "^0.40.0",
+    "uid": "^2.0.2",
+    "vuesix": "^1.0.18"
+  },
+  "prisma": {
+    "schema": "src/backend/prisma/schema.prisma"
+  }
+}

@@ -1,0 +1,43 @@
+.switch-icons
+  &-enter-active, &-leave-active
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s
+  &-enter-from
+    transform: translateY(100%)
+    opacity: 0
+  &-leave-to
+    transform: translateY(-100%)
+    opacity: 0
+
+.flex-row
+  display: flex
+  gap: 16px
+  align-items: center
+
+.d-none
+  display: none
+
+.scroll
+  overflow-x: hidden
+  overflow-y: auto
+  &::-webkit-scrollbar
+    width: 10px
+    height: 10px
+  
+  &::-webkit-scrollbar-track
+    background-color: var(--scrollbar-color)
+    border-radius: 10px
+    margin: 8px
+    border: 2px solid transparent
+    background-clip: content-box
+
+  &::-webkit-scrollbar-thumb
+    background-color: var(--placeholder-color)
+    border-radius: 10px
+    border: 2px solid transparent
+    background-clip: content-box
+
+  &::-webkit-scrollbar-corner
+    background-color: var(--scrollbar-color)
+    border-radius: 10px
+    width: 2px
+    height: 2px

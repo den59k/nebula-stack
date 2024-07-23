@@ -1,0 +1,36 @@
+datasource postgresql {
+  url      = env("PG_DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+}
+
+model AdminUser {
+  id                Int                 @id @default(autoincrement())
+  createdAt         DateTime            @default(now())
+  login             String              @unique
+  password          Bytes
+  sessions          AdminUserSession[]
+}
+
+model AdminUserSession {
+  id                BigInt    @id @default(autoincrement())
+  adminUserId       Int
+  adminUser         AdminUser @relation(fields: [adminUserId], references: [id])
+  ip                String
+  updatedAt         DateTime  @default(now())
+  refreshToken      String    @unique
+}
+
+model File {
+  id                String   @id
+  createdAt         DateTime @default(now())
+  src               String
+  previewSrc        String?
+  iconSrc           String?
+  size              Int
+}
+
+// Client tables
